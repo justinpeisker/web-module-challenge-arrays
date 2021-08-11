@@ -45,18 +45,10 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-
 function copy(array){
-  const clonedArray = [...array];
 
-  return (clonedArray);
-  
-}    
-
-
-
-
-
+  return [...array];
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -152,15 +144,14 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 // 2 param array, string
-function removeFlavorByName(array, string){
-  const removedArray= [];
+function removeFlavorByName(array, flavor){
 
   for(let i = 0; i <array.length; i++){
-    if(array[i] === string){
-      removedArray.splice(array[i]);
+    if(array[i] === flavor){
+      array.splice(i, 1);
     }
   }
-  return removedArray;
+  return array;
   // loop through the array and check each index for the string
   // conditional that checks for the exact match ===
   // if the item matches the string remove the item at that specific index .splice(,)

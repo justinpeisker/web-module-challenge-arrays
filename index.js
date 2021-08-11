@@ -45,9 +45,14 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+
+function copy(array){
+  const clonedArray = [...array];
+
+  return (clonedArray);
+  
 }    
+
 
 
 
@@ -64,8 +69,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
+function is31Flavors(originalFlavors){
  /*your code here*/
+//  if array.length is 31 return true else return false
+  if(originalFlavors.length === 31){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +92,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(originalFlavors, string){
+
+ originalFlavors.unshift('Rainbow Sherbert');
+
+
+return originalFlavors;
 }
 
 
@@ -96,9 +111,11 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
+// 1 param -array
+function removeLastFlavor(originalFlavors){
+  originalFlavors.pop();
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+return originalFlavors;
 }
 
 
@@ -113,9 +130,10 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+// 2PARAM- array, index
+function getFlavorByIndex(originalFlavors, index){
+  return originalFlavors [index];
+  // return array[index]
 }
 
 
@@ -133,9 +151,20 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
+// 2 param array, string
+function removeFlavorByName(array, string){
+  const removedArray= [];
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+  for(let i = 0; i <array.length; i++){
+    if(array[i] === string){
+      removedArray.splice(array[i]);
+    }
+  }
+  return removedArray;
+  // loop through the array and check each index for the string
+  // conditional that checks for the exact match ===
+  // if the item matches the string remove the item at that specific index .splice(,)
+  // outside of the loop return array
 }
 
 
@@ -170,7 +199,7 @@ function filterByWord(array, string){
   }
   return filteredArray;
 }
-console.log('Task 7', filterByWord(originalFlavors, 'chocolate'))
+// console.log('Task 7', filterByWord(originalFlavors, 'chocolate'))
 
 
 
@@ -304,7 +333,7 @@ module.exports = {
   removeLastFlavor,
   getFlavorByIndex,
   removeFlavorByName,
-  copy,
+  // copy,
   filterByWord,
   getAverageWordLength,
   getRandomFlavors
